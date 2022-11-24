@@ -85,7 +85,7 @@ const Register = () => {
                                         <div className="form-outline form-white mb-4">
                                             <label>Select your account type</label>
                                             <select name="select" class="form-select" aria-label="Default select example">
-                                                <option selected value="user">User</option>
+                                                <option selected value="buyer">Buyer</option>
                                                 <option value="seller">Seller</option>
                                             </select>
                                         </div>
