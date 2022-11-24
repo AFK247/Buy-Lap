@@ -1,0 +1,33 @@
+[
+    {
+      "product_name": "Asus",
+      "seller_name": "Grace Reyes",
+      "pic": "http://placehold.it/32x32",
+      "years": 5,
+      "or_price": 23,
+      "time": "2018-03-25",
+      "location":"Dhaka",
+      "re_price": 100
+    },
+    {
+      "product_name": "HP",
+      "seller_name": "Rodriquez Walls",
+      "pic": "http://placehold.it/32x32",
+      "years": 1,
+      "or_price": 40,
+      "time": "2014-08-10",
+      "location":"Dhaka",
+      "re_price": 100
+    },
+    {
+      "product_name": "Lenovo",
+      "seller_name": "Payne Chambers",
+      "pic": "http://placehold.it/32x32",
+      "years": 8,
+      "or_price": 39,
+      "time": "2021-10-08",
+      "location":"Dhaka",
+      "re_price": 100
+    }
+   
+  ]
