@@ -26,10 +26,31 @@ const Login = () => {
     const google = new GoogleAuthProvider();
 
     const handleGoogle = () => {
+
         googleLogin(google)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                const googleUser = {
+                    email:user.email,
+                    name:user.displayName,
+                    photoURL:user.photoURL,
+                    role:"seller"  
+                }
+                console.log(user);
+                fetch(`http://localhost:5000/user`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(googleUser)
+                })
+                    .then(res => res.json())
+                    .then(newData => {
+                        if (newData.acknowledged)
+                            alert("Google Login Succesful")
+                    })
+                    .catch(er => console.error(er));
                
             })
             .catch(error => console.error(error))

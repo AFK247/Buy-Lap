@@ -1,60 +1,61 @@
 import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 
 
 const Laptop = ({ laptop }) => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const { product_name, seller_name, pic, years, or_price, re_price, location, code } = laptop;
-    const handleSubmit = event => {
-        
+
+    const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const displayName = form.displayName.value;
         const product_name = form.product_name.value;
         const re_price = form.re_price.value;
-        const location = form.location.value;
+        const locate = form.location.value;
         const phone = form.phone.value;
-
 
         const info = {
             displayName,
             email,
             product_name,
             price: re_price,
-            location,
+            place: locate,
             phone,
             code,
             pic
         }
-        fetch(`http://localhost:5000/catagory`, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(info)
-    })
-        .then(res => res.json())
-        .then(newData => {
-            if(newData.acknowledged)
-            alert('Booking confirmed');
+        console.log(info);
+        fetch(`http://localhost:5000/bookings`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(info)
         })
-        .catch(er => console.error(er));
+            .then(res => res.json())
+            .then(newData => {
+                if (newData.acknowledged)
+                    toast("Booking confirmed");
+            })
+            .catch(er => console.error(er));
 
     }
 
 
     return (
         <div className="col">
-
             <div className="card">
                 <img src={pic} className="card-img-top img-fluid" alt="..."></img>
                 <div className="card-body">
                     <h4 className="card-title mb-2">Original Price: ${or_price}</h4>
                     <h4 className="card-title mb-2">Re-Sell Price: ${re_price}</h4>
                     <h4 className="card-title mb-2">Product Name: {product_name}</h4>
+                    <Toaster position="top-center" reverseOrder={false} />
                     <div>
                         <span className="card-title mb-2 ">Seller Name: {seller_name}</span>
                         <i className="fa-solid fa-check ms-1 bg-primary rounded-5"></i>
@@ -75,7 +76,7 @@ const Laptop = ({ laptop }) => {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div id="details" className="modal-body">
-                                <form onSubmit={() => handleSubmit} className="mb-md-2 mt-md-2 ">
+                                <form onSubmit={handleSubmit} className="mb-md-2 mt-md-2 ">
 
                                     <h2 className="fw-bold mb-2 text-uppercase">Complete the form</h2>
 
@@ -107,7 +108,7 @@ const Laptop = ({ laptop }) => {
                                     <div className="form-outline form-white mb-4">
                                         <input placeholder='Phone Number' type="text" name="phone" className="form-control form-control-lg" />
                                     </div>
-                                    <button className="btn btn-info px-4 " data-bs-dismiss="modal" type="submit">Submit</button>
+                                    <button className="btn btn-secondary" data-bs-dismiss="modal" type="submit">Submit</button>
                                 </form>
                             </div>
                             <div className="modal-footer">

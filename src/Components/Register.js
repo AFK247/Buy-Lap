@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import useTitle from '../hooks/useTitle';
 import { AuthContext } from './AuthProvider';
@@ -6,8 +7,8 @@ import { AuthContext } from './AuthProvider';
 //Registration
 const Register = () => {
     useTitle("Register")
-    const { register,userProfileUpdate,setLoading } = useContext(AuthContext);
-    
+    const { register, userProfileUpdate, setLoading } = useContext(AuthContext);
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -16,7 +17,28 @@ const Register = () => {
         const password = form.password.value;
         const name = form.name.value;
         const photoURL = form.photo.value;
-        
+        const role = form.select.value;
+
+        const user = {
+            email,
+            name,
+            photoURL,
+            role  
+        }
+        console.log(user);
+        fetch(`http://localhost:5000/user`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(newData => {
+                if (newData.acknowledged)
+                    toast("Booking confirmed");
+            })
+            .catch(er => console.error(er));
 
         register(email, password)
             .then(temp => {
@@ -24,7 +46,7 @@ const Register = () => {
                 console.log(user);
                 handleUserProfile(name, photoURL);
                 form.reset();
-                
+
             })
             .catch(e => {
                 console.error(e);
@@ -38,13 +60,13 @@ const Register = () => {
             displayName: name,
             photoURL: photoURL
         }
-        
+
         userProfileUpdate(profile)
-        .then(() => {})
-        .catch(e => console.error(e));
+            .then(() => { })
+            .catch(e => console.error(e));
     }
 
-    
+
 
     return (
         <div>
@@ -59,6 +81,14 @@ const Register = () => {
 
                                         <h2 className="fw-bold mb-2 text-uppercase">Registration</h2>
                                         <p className="text-white-50 mb-5">Please enter your Name, Photo URL, Email and Password!</p>
+
+                                        <div className="form-outline form-white mb-4">
+                                            <label>Select your account type</label>
+                                            <select name="select" class="form-select" aria-label="Default select example">
+                                                <option selected value="user">User</option>
+                                                <option value="seller">Seller</option>
+                                            </select>
+                                        </div>
 
                                         <div className="form-outline form-white mb-4">
                                             <input placeholder='Full Name' type="text" name="name" className="form-control form-control-lg" />

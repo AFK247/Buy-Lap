@@ -17,7 +17,7 @@ const Catagory = () => {
         return <Loading></Loading>
     }
 
-    console.log(catagories);
+    // console.log(catagories);
     return (
         <div>
             <h1 className='text-info text-center  mt-5'>Category</h1>
