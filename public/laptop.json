@@ -1,0 +1,102 @@
+[
+    {
+      "product_name": "Asus",
+      "seller_name": "Grace Reyes",
+      "pic": "https://technave.com/data/files/mall/article/202006030424556476.jpg",
+      "years": 5,
+      "or_price": 23,
+      "time": "2018-03-25",
+      "location":"Rangpur",
+      "re_price": 100,
+      "code":"gl"
+    },
+    {
+      "product_name": "HP",
+      "seller_name": "Rodriquez Walls",
+      "pic": "https://w0.peakpx.com/wallpaper/1004/383/HD-wallpaper-hp-laptop-pavilion-new-hp-laptop.jpg",
+      "years": 1,
+      "or_price": 40,
+      "time": "2014-08-10",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"gl"
+    },
+    {
+      "product_name": "Lenovo",
+      "seller_name": "Payne Chambers",
+      "pic": "https://bg.systweak.com/blogs/wp-content/uploads/2022/05/How-to-fix-sound-not-working-on-lenovo-laptop.jpg",
+      "years": 3,
+      "or_price": 39,
+      "time": "2021-10-08",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"bl"
+    },
+    {
+      "product_name": "Asus",
+      "seller_name": "Grace Reyes",
+      "pic": "https://technave.com/data/files/mall/article/202006030424556476.jpg",
+      "years": 5,
+      "or_price": 23,
+      "time": "2018-03-25",
+      "location":"Rangpur",
+      "re_price": 100,
+      "code":"bl"
+    },
+    {
+      "product_name": "HP",
+      "seller_name": "Rodriquez Walls",
+      "pic": "https://w0.peakpx.com/wallpaper/1004/383/HD-wallpaper-hp-laptop-pavilion-new-hp-laptop.jpg",
+      "years": 1,
+      "or_price": 40,
+      "time": "2014-08-10",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"ol"
+    },
+    {
+      "product_name": "Lenovo",
+      "seller_name": "Payne Chambers",
+      "pic": "https://bg.systweak.com/blogs/wp-content/uploads/2022/05/How-to-fix-sound-not-working-on-lenovo-laptop.jpg",
+      "years": 3,
+      "or_price": 39,
+      "time": "2021-10-08",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"ol"
+    },
+    {
+      "product_name": "Lenovo",
+      "seller_name": "Payne Chambers",
+      "pic": "https://bg.systweak.com/blogs/wp-content/uploads/2022/05/How-to-fix-sound-not-working-on-lenovo-laptop.jpg",
+      "years": 3,
+      "or_price": 39,
+      "time": "2021-10-08",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"ol"
+    },
+    {
+      "product_name": "Lenovo",
+      "seller_name": "Payne Chambers",
+      "pic": "https://bg.systweak.com/blogs/wp-content/uploads/2022/05/How-to-fix-sound-not-working-on-lenovo-laptop.jpg",
+      "years": 3,
+      "or_price": 39,
+      "time": "2021-10-08",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"gl"
+    },
+    {
+      "product_name": "Lenovo",
+      "seller_name": "Payne Chambers",
+      "pic": "https://bg.systweak.com/blogs/wp-content/uploads/2022/05/How-to-fix-sound-not-working-on-lenovo-laptop.jpg",
+      "years": 3,
+      "or_price": 39,
+      "time": "2021-10-08",
+      "location":"Dhaka",
+      "re_price": 100,
+      "code":"bl"
+    }
+   
+  ]

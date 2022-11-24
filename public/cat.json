@@ -1,0 +1,18 @@
+[
+    {
+      "cat_name": "Business",
+      "pic": "http://placehold.it/32x32",
+      "code": "bl"
+    },
+    {
+      "cat_name": "Gaming",
+      "pic": "http://placehold.it/32x32",
+      "code": "gl"
+    },
+    {
+      "cat_name": "Office",
+      "pic": "http://placehold.it/32x32",
+      "code": "ol"
+    }
+   
+  ]

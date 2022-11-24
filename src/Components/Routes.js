@@ -1,5 +1,6 @@
 import Blog from "./Blog";
 import Home from "./Home";
+import IndividualCat from "./IndividualCat";
 import Login from "./Login";
 import Main from "./Main";
 import Register from "./Register";
@@ -21,8 +22,13 @@ const router = createBrowserRouter([
           element: <Login></Login>
         },
         {
-            path: '/register', 
-            element: <Register></Register>
+          path: '/register', 
+          element: <Register></Register>
+      },
+        {
+            path: '/category/:id', 
+            element: <IndividualCat></IndividualCat>,
+            loader: ({params})=> fetch(`http://localhost:5000/catagory/${params.id}`)
         },
         {
           path: '/blog',
