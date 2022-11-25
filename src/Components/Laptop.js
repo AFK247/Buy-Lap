@@ -27,7 +27,8 @@ const Laptop = ({ laptop }) => {
             place: locate,
             phone,
             code,
-            pic
+            pic,
+            status:"sold"
         }
         console.log(info);
         fetch(`http://localhost:5000/bookings`, {
@@ -66,80 +67,54 @@ const Laptop = ({ laptop }) => {
                 </div>
             </div>
 
-            {user?.uid ?
-                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="ModalLabel">{product_name}</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div id="details" className="modal-body">
-                                <form onSubmit={handleSubmit} className="mb-md-2 mt-md-2 ">
+            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="ModalLabel">{product_name}</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="details" className="modal-body">
+                            <form onSubmit={handleSubmit} className="mb-md-2 mt-md-2 ">
 
-                                    <h2 className="fw-bold mb-2 text-uppercase">Complete the form</h2>
-
-
-                                    <div className="form-outline form-white mb-4">
-                                        <input disabled defaultValue={user.displayName} type="text" name="displayName" className="form-control form-control-lg" />
-                                    </div>
-
-                                    <div className="form-outline form-white mb-4">
-                                        <input disabled defaultValue={user.email} type="email" name="email" className="form-control form-control-lg" />
-                                    </div>
-
-                                    <div className="form-outline form-white mb-4">
-                                        <input disabled defaultValue={product_name} type="text" name="product_name" className="form-control form-control-lg" />
-                                    </div>
-
-                                    <div className="form-outline form-white mb-4">
-                                        <input disabled defaultValue={re_price} type="text" name="re_price" className="form-control form-control-lg" />
-                                    </div>
+                                <h2 className="fw-bold mb-2 text-uppercase">Complete the form</h2>
 
 
+                                <div className="form-outline form-white mb-4">
+                                    <input disabled defaultValue={user.displayName} type="text" name="displayName" className="form-control form-control-lg" />
+                                </div>
 
+                                <div className="form-outline form-white mb-4">
+                                    <input disabled defaultValue={user.email} type="email" name="email" className="form-control form-control-lg" />
+                                </div>
 
+                                <div className="form-outline form-white mb-4">
+                                    <input disabled defaultValue={product_name} type="text" name="product_name" className="form-control form-control-lg" />
+                                </div>
 
-                                    <div className="form-outline form-white mb-4">
-                                        <input placeholder='Location' type="text" name="location" className="form-control form-control-lg" />
-                                    </div>
+                                <div className="form-outline form-white mb-4">
+                                    <input disabled defaultValue={re_price} type="text" name="re_price" className="form-control form-control-lg" />
+                                </div>
 
-                                    <div className="form-outline form-white mb-4">
-                                        <input placeholder='Phone Number' type="text" name="phone" className="form-control form-control-lg" />
-                                    </div>
-                                    <button className="btn btn-secondary" data-bs-dismiss="modal" type="submit">Submit</button>
-                                </form>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <div className="form-outline form-white mb-4">
+                                    <input placeholder='Location' type="text" name="location" className="form-control form-control-lg" />
+                                </div>
 
-                            </div>
+                                <div className="form-outline form-white mb-4">
+                                    <input placeholder='Phone Number' type="text" name="phone" className="form-control form-control-lg" />
+                                </div>
+                                <button className="btn btn-secondary" data-bs-dismiss="modal" type="submit">Submit</button>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                         </div>
                     </div>
                 </div>
-                :
-                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title" id="ModalLabel">{product_name}</h5>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div id="details" className="modal-body">
-                                <h4 className="card-title mb-2">Original Price: ${or_price}</h4>
-                                <h4 className="card-title mb-2">Re-Sell Price: ${re_price}</h4>
-                                <h4 className="card-title mb-2">seller_name: {seller_name}</h4>
-                                <h2 className='text-secondary mt-4'>U need to <Link to="/login" className='text-danger'>Log In</Link> to Book</h2>
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>}
+            </div>
+
         </div>
     );
 };

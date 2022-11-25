@@ -21,8 +21,10 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
+
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch(`http://localhost:5000/advertise`)
       },
       {
         path: '/login',
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/category/:id',
-        element: <IndividualCat></IndividualCat>,
+        element: <PrivateRoute><IndividualCat></IndividualCat></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
       },
       {

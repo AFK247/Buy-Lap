@@ -15,14 +15,14 @@ const Sellers = () => {
         }
     });
 
-    function advertiseHandeler(item){
+    function advertiseHandeler(item) {
         console.log(item);
-        fetch(`http://localhost:5000/user`, {
+        fetch(`http://localhost:5000/advertise`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(item)
         })
             .then(res => res.json())
             .then(newData => {
@@ -30,6 +30,19 @@ const Sellers = () => {
                     alert("Successfully Advertied in Homepage")
             })
             .catch(er => console.error(er));
+    }
+
+    const handleDelete = name => {
+        console.log("inside handle Delete",name);
+        fetch(`http://localhost:5000/delete/${name}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(newData => {
+                if (newData.deletedCount > 0) {
+                    alert("suceessfully Deleted")
+                }
+            })
     }
 
 
@@ -47,7 +60,7 @@ const Sellers = () => {
                             <th>Status</th>
                             <th>Delete</th>
                             <th>Advertise</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
@@ -60,8 +73,8 @@ const Sellers = () => {
                                 <td>{item.seller_name}</td>
                                 <td>${item.re_price}</td>
                                 <td>{item.status}</td>
-                                <td><button className='btn btn-danger'>Delete</button></td>
-                                <td><button onClick={()=>advertiseHandeler()} className='btn btn-danger'>Advertise</button></td>
+                                <td><button onClick={() => handleDelete(item.product_name)} className='btn btn-danger'>Delete</button></td>
+                                <td><button onClick={() => advertiseHandeler(item)} className='btn btn-danger'>Advertise</button></td>
                             </tr>)
                         }
 

@@ -33,7 +33,9 @@ console.log(code);
             phone,
             code,
             condition,
-            details
+            details,
+            role:"seller",
+            status:"available"
         }
         console.log(product);
         fetch(`http://localhost:5000/addProduct`, {
@@ -46,7 +48,9 @@ console.log(code);
             .then(res => res.json())
             .then(newData => {
                 if (newData.acknowledged)
-                    toast("Product Succesfully Added");
+                    alert("Product Succesfully Added");
+                    window.location.href = '/dashboard/myProduct';
+                    
             })
             .catch(er => console.error(er));
 
@@ -55,10 +59,10 @@ console.log(code);
         <div>
             <form onSubmit={handleSubmit} className="mb-md-2 mt-md-2 w-50 mx-auto">
 
-                <h3 className="fw-bold my-4 text-uppercase text-center ">Complete the form</h3>
+                <h3 className="fw-bold my-4 text-uppercase text-center ">All New Product</h3>
 
                 <div className="form-outline form-white mb-4">
-                    <input placeholder='Product Name' type="text" name="product_name" className="form-control form-control-lg" />
+                    <input placeholder='Product Name(Must be unique)' type="text" name="product_name" className="form-control form-control-lg" />
                 </div>
 
                 <div className="form-outline form-white mb-4">
@@ -107,7 +111,7 @@ console.log(code);
                 </div>
 
                 <div className="form-outline form-white mb-4">
-                    <input defaultValue={user.email} placeholder='email' type="text" name="email" className="form-control form-control-lg" />
+                    <input disabled defaultValue={user.email} placeholder='email' type="text" name="email" className="form-control form-control-lg" />
                 </div>
 
                 <div className="form-outline form-white mb-4">

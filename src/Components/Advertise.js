@@ -1,10 +1,16 @@
 import React from 'react';
+import AdvertiseCard from './AdvertiseCard';
 
-const Advertise = () => {
+const Advertise = ({advertise}) => {
+    console.log(advertise);
     return (
         <div>
-            <h2 className='text-center'>Advertise Items</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere voluptates culpa, perferendis, rerum neque voluptatibus nesciunt vero mollitia quasi error beatae, non totam vel molestiae iure. Est ex cum nulla accusamus deserunt voluptatibus, et sint facere natus quisquam fuga obcaecati nostrum ipsum, fugit eos quibusdam, explicabo deleniti nesciunt culpa incidunt!</p>
+            <h1 className='text-info text-center  mt-5'>Advertised Items</h1>
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 p-3 container m-auto">
+                {
+                    advertise.map(advert => <AdvertiseCard key={advert._id} advert={advert} />)
+                }
+            </div>
         </div>
     );
 };

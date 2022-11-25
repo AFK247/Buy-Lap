@@ -12,28 +12,24 @@ const AllUsers = () => {
         }
     });
 
-    // const handleMakeAdmin = id => {
-    //     fetch(`http://localhost:5000/users/admin/${id}`, {
-    //         method: 'PUT', 
-    //         headers: {
-    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         if(data.modifiedCount > 0){
-    //             toast.success('Make admin successful.')
-    //             refetch();
-    //         }
-    //     })
-    // }
+    const buyers = users.filter(user => user.role === "buyer");
+    const sellers = users.filter(user => user.role === "seller");
+
+
+    
+
+
 
     return (
         <div>
             <h2 className='text-center'>All Users</h2>
+
             <div className='d-flex justify-content-center'>
 
                 <table className="table w-auto">
+                    <thead>
+                    </thead>
+                    <h3 className='my-5 mx-auto'>Buyers</h3>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -46,7 +42,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, i) => <tr key={user._id}>
+                            buyers.map((user, i) => <tr key={user._id}>
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
@@ -55,9 +51,32 @@ const AllUsers = () => {
                                 <td><button className='btn btn-danger'>Delete</button></td>
                             </tr>)
                         }
-
-
                     </tbody>
+                    <h3 className='my-5 mx-auto'>Sellers</h3>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th >Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Admin</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            sellers.map((user, i) => <tr key={user._id}>
+                                <th>{i + 1}</th>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user?.role}</td>
+                                <td>{user?.role !== 'admin' && <button className='btn  btn-primary'>Make Admin</button>}</td>
+                                <td><button className='btn btn-danger'>Delete</button></td>
+                            </tr>)
+                        }
+                    </tbody>
+
+
                 </table>
             </div>
         </div>

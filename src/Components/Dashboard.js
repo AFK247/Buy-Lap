@@ -38,7 +38,7 @@ const Dashboard = () => {
                             <div>
                                 <h2 className='text-center my-3'>Seller Panel</h2>
                                 <Link className='btn btn-info' to="/dashboard/myproduct">My Product</Link>
-                                <Link className='btn btn-info' to="/dashboard/addProduct">Add Product</Link>
+                                <Link className='btn btn-info ms-4' to="/dashboard/addProduct">Add Product</Link>
                             </div>
 
                         }

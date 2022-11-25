@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import useTitle from '../hooks/useTitle';
 import About from './About';
 import Advertise from './Advertise';
@@ -10,13 +11,14 @@ import Slider from './Slider';
 //Home Page
 
 const Home = () => {
-    useTitle("Home")
-
-
+    useTitle("Home");
+    const advertise=useLoaderData();
+    const len=advertise.length;
+    console.log(len);
     return (
         <>
             <Slider></Slider>
-            <Advertise></Advertise>
+            {len && <Advertise advertise={advertise}></Advertise>}
             <Catagory></Catagory>
             <About></About>
 
