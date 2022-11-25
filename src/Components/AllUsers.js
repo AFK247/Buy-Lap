@@ -33,7 +33,7 @@ const AllUsers = () => {
             <h2 className='text-center'>All Users</h2>
             <div className='d-flex justify-content-center'>
 
-                <table className="table w-50">
+                <table className="table w-auto">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

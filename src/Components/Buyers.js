@@ -18,7 +18,7 @@ const Buyers = () => {
         <h2 className='text-center'>Buyers</h2>
         <div className='d-flex justify-content-center'>
         
-        <table className="table w-50">
+        <table className="table w-auto">
             <thead>
                 <tr>
                     <th scope="col">#</th>

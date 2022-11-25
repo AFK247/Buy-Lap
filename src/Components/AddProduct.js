@@ -18,6 +18,7 @@ const AddProduct = () => {
         const phone = form.phone.value
         const code = form.select1.value
         const condition = form.select2.value
+        const details = form.details.value
 
 console.log(code);
         const product = {
@@ -31,7 +32,8 @@ console.log(code);
             email,
             phone,
             code,
-            condition
+            condition,
+            details
         }
         console.log(product);
         fetch(`http://localhost:5000/addProduct`, {
@@ -81,6 +83,10 @@ console.log(code);
 
                 <div className="form-outline form-white mb-4">
                     <input placeholder='Resell Price' type="text" name="re_price" className="form-control form-control-lg" />
+                </div>
+
+                <div className="form-outline form-white mb-4">
+                    <input placeholder='Short Description' type="text" name="details" className="form-control form-control-lg" />
                 </div>
 
                 <div className="form-outline form-white mb-4">
