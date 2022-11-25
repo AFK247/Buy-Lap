@@ -1,4 +1,6 @@
 import AddProduct from "./AddProduct";
+import Allbuyers from "./Allbuyers";
+import Allsellers from "./Allsellers";
 import AllUsers from "./AllUsers";
 import Blog from "./Blog";
 import Buyers from "./Buyers";
@@ -10,6 +12,7 @@ import Login from "./Login";
 import Main from "./Main";
 import PrivateRoute from "./PrivateRoute";
 import Register from "./Register";
+import Reported from "./Reported";
 import Sellers from "./Sellers";
 
 
@@ -54,8 +57,16 @@ const router = createBrowserRouter([
         element: <DefaultDash></DefaultDash>
       },
       {
-        path: '/dashboard/admin',
-        element: <AllUsers></AllUsers>
+        path: '/dashboard/allbuyers',
+        element: <Allbuyers></Allbuyers>
+      },
+      {
+        path: '/dashboard/allsellers',
+        element: <Allsellers></Allsellers>
+      },
+      {
+        path: '/dashboard/reported',
+        element: <Reported></Reported>
       },
       {
         path: '/dashboard/myProduct',

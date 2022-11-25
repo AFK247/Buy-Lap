@@ -40,7 +40,7 @@ const Sellers = () => {
             .then(res => res.json())
             .then(newData => {
                 if (newData.deletedCount > 0) {
-                    alert("suceessfully Deleted")
+                    alert("suceessfully Deleted");
                 }
             })
     }

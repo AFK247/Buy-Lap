@@ -98,11 +98,11 @@ const Login = () => {
                                         <p className="text-white-50 mb-5">Log In with Email and Password!</p>
 
                                         <div className="form-outline form-white mb-4">
-                                            <input placeholder='Email' type="email" name="email" className="form-control form-control-lg" />
+                                            <input required placeholder='Email' type="email" name="email" className="form-control form-control-lg" />
                                         </div>
 
                                         <div className="form-outline form-white mb-4">
-                                            <input placeholder='Password' type="password" name="password" className="form-control form-control-lg" />
+                                            <input required placeholder='Password' type="password" name="password" className="form-control form-control-lg" />
                                         </div>
                                         <button className="btn btn-outline-warning mb-4 px-4" type="submit">Login</button>
                                         <p className='text-danger text-center'>{error}</p> 

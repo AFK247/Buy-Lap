@@ -23,7 +23,9 @@ const Dashboard = () => {
                             isAdmin &&
                             <div>
                                 <h2 className='text-center my-3'>Admin Panel</h2>
-                                <Link className='btn btn-info ' to="/dashboard/admin">All users</Link>
+                                <Link className='btn btn-info ' to="/dashboard/allbuyers">All Buyers</Link>
+                                <Link className='btn btn-info ms-4' to="/dashboard/allsellers">All Sellers</Link>
+                                <Link className='btn btn-info ms-4' to="/dashboard/reported">Reported Items</Link>
                             </div>
                         }
                         {
