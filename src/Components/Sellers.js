@@ -32,9 +32,9 @@ const Sellers = () => {
             .catch(er => console.error(er));
     }
 
-    const handleDelete = name => {
-        console.log("inside handle Delete",name);
-        fetch(`http://localhost:5000/delete/${name}`, {
+    const handleDelete = itemName => {
+        console.log("inside handle Delete",itemName);
+        fetch(`http://localhost:5000/myProductDelete/${itemName}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -12,13 +12,12 @@ const Allsellers = () => {
         }
     });
 
-    const buyers = users.filter(user => user.role === "buyer");
     const sellers = users.filter(user => user.role === "seller");
 
 
-    const handleDelete = (name) => {
-        console.log("inside handle Delete email ",name);
-        fetch(`http://localhost:5000/deleteUser/${name}`, {
+    const handleDelete = (emailAdd) => {
+        console.log("inside handle all seller Delete email ",emailAdd);
+        fetch(`http://localhost:5000/deleteSeller/${emailAdd}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
