@@ -10,15 +10,16 @@ const Footer = () => {
                     <div className="col">
                         <h3 className=" mb-4 fw-bolder">Service</h3>
 
-                        <p>The servide of pro Photographer is very good . We are always trusted and reliable .People come to to give review .So see the reviews and take the decision.We will be glad to get hired </p>
+                        <p>The servide of Buy Lap is very good . We are always trusted and reliable .People come to to give review .So see the reviews and take the decision.We will be glad if you buy from Us </p>
                     </div>
                     <div className="col">
                         <h3 className=" mb-4 fw-bolder">PRODUCTS</h3>
 
-                        <p>Animal Photo</p>
-                        <p>River Photo</p>
-                        <p>Food Photo</p>
-                        <p>Forest Photo</p>
+                        <p>Business Laptop</p>
+                        <p>Gaming Laptop</p>
+                        <p>Office Laptop</p>
+                        <p>Normal Laptop</p>
+                        
                     </div>
                     <div className="col">
                         <h3 className="mb-4 fw-bolder">CONTACT</h3>

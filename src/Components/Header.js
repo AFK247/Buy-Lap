@@ -52,7 +52,6 @@ const Header = () => {
                     </ul>
                     <form className="margin d-flex justify-content-center m-2 m-lg-0 m-md-0 m-sm-0" role="search">
                         <Link className="btn btn-outline-warning me-4" to="/dashboard">Dashboard</Link>
-                        <Link className="btn btn-outline-warning me-4" to="/services">Services</Link>
                         <Link className="btn btn-outline-warning rounded-pill" to="/blog">Blog</Link>
                     </form>
                 </div>

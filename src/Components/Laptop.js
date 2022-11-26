@@ -7,7 +7,7 @@ import { AuthContext } from './AuthProvider';
 
 const Laptop = ({ laptop }) => {
     const { user } = useContext(AuthContext);
-    const { product_name, seller_name, pic, years, or_price, re_price, location, code } = laptop;
+    const { product_name, seller_name, pic, years, or_price, re_price, location, code,details } = laptop;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -28,7 +28,7 @@ const Laptop = ({ laptop }) => {
             phone,
             code,
             pic,
-            status:"sold"
+            status: "sold"
         }
         console.log(info);
         fetch(`http://localhost:5000/bookings`, {
@@ -53,17 +53,18 @@ const Laptop = ({ laptop }) => {
             <div className="card">
                 <img src={pic} className="card-img-top img-fluid" alt="..."></img>
                 <div className="card-body">
-                    <h4 className="card-title mb-2">Original Price: ${or_price}</h4>
-                    <h4 className="card-title mb-2">Re-Sell Price: ${re_price}</h4>
-                    <h4 className="card-title mb-2">Product Name: {product_name}</h4>
+                    <h4 className="mb-2">{product_name}</h4>
+                    <p className="mb-2"><span className='fs-5 fst-italic'>Original Price: </span>${or_price}</p>
+                    <p className="mb-2"><span className='fs-5 fst-italic'>Re-Sell Price: </span>${re_price}</p>
                     <Toaster position="top-center" reverseOrder={false} />
                     <div>
-                        <span className="card-title mb-2 ">Seller Name: {seller_name}</span>
+                        <span className="card-title mb-2 "><span className='fs-5 fst-italic'>Seller Name: </span>{seller_name}</span>
                         <i className="fa-solid fa-check ms-1 bg-primary rounded-5"></i>
                         <span data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-warning ms-3">Book Now</span>
                     </div>
-                    <h5>Purchase Year: {years}</h5>
-                    <h5>Location: {location}</h5>
+                    <p><span className='fs-5 fst-italic'>Purchase Year: </span>{years}</p>
+                    <p><span className='fs-5 fst-italic'>Location: </span>{location}</p>
+                    <p><span className='fs-5 fst-italic'>Details: </span>{details}</p>
                 </div>
             </div>
 

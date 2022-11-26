@@ -80,15 +80,7 @@ const router = createBrowserRouter([
         path: '/dashboard/buyers',
         element: <Buyers></Buyers>
       },
-      // },
-      // {
-      //     path: '/dashboard/adddoctor',
-      //     element: <AdminRoute><AddDoctor></AddDoctor></AdminRoute>
-      // },
-      // {
-      //     path: '/dashboard/managedoctors',
-      //     element: <AdminRoute><ManageDoctors></ManageDoctors></AdminRoute>
-      // },
+     
     ]
   },
   {
