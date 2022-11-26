@@ -59,7 +59,7 @@ console.log(code);
         <div>
             <form onSubmit={handleSubmit} className="mb-md-2 mt-md-2 w-50 mx-auto">
 
-                <h3 className="fw-bold my-4 text-uppercase text-center ">All New Product</h3>
+                <h3 className="fw-bold my-4 text-uppercase text-center ">ADD New Product</h3>
 
                 <div className="form-outline form-white mb-4">
                     <input placeholder='Product Name(Must be unique)' type="text" name="product_name" className="form-control form-control-lg" />

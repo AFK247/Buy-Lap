@@ -1,11 +1,11 @@
 import AddProduct from "./AddProduct";
 import Allbuyers from "./Allbuyers";
 import Allsellers from "./Allsellers";
-import AllUsers from "./AllUsers";
 import Blog from "./Blog";
 import Buyers from "./Buyers";
 import Dashboard from "./Dashboard";
 import DefaultDash from "./DefaultDash";
+import ErrorRoute from "./ErrorRoute";
 import Home from "./Home";
 import IndividualCat from "./IndividualCat";
 import Login from "./Login";
@@ -90,6 +90,10 @@ const router = createBrowserRouter([
       //     element: <AdminRoute><ManageDoctors></ManageDoctors></AdminRoute>
       // },
     ]
+  },
+  {
+    path:"*",
+    element: <ErrorRoute></ErrorRoute>
   }
 ]);
 

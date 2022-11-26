@@ -10,12 +10,12 @@ const PrivateRoute = ({ children }) => {
     //loading spinner
     if (loading) {
         console.log("loading er vitor");
-         return <div class="d-flex justify-content-center">
-         <div class="spinner-border" role="status">
-             <span class="visually-hidden">Loading</span>
-         </div>
-     </div>
-         
+        return <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading</span>
+            </div>
+        </div>
+
     }
 
     if (user) {

@@ -9,11 +9,11 @@ const About = () => {
                 <div className="row d-flex mx-4 flex-lg-row  flex-md-column-reverse flex-sm-column-reverse flex-column-reverse">
 
                     <div className="col-lg-6 col-md-11 col-sm-11 mt-4">
-                        <h6 className="text-danger">Welcome To Pro Course</h6>
+                        <h6 className="text-danger">Welcome To Buy Lap</h6>
                         <h2>We are always Faster & Reliable</h2>
                         <hr style={{ border: "2px solid red", backgroundColor: "red" }} className="col-4  " />
-                        <p>Pro Course is one of the successful learning platform in the modern world.It was established in 2012 in Rangpur with the intention to teach people and student to be able to be good at different CSE skills .Now a days it is a must to have these skills.So one should always try to learn different skills .SO are you ready? What are your waiting form .Try our courses</p>
-                        <Link className="btn btn-danger rounded-pill mb-5" to="/courses">Browse Course</Link>
+                        <p>Buy Lap is one of the successful E-commerce platform in the modern world.It was established in 2012 in Rangpur with the intention to sell used laptop to people and student .Now a days it became very popular to buy and sell used laptops .Try our Laptops</p>
+                        <Link className="btn btn-danger rounded-pill mb-5" to="/">Browse Laptop</Link>
                     </div>
 
                     <div className="col-lg-6 col-md-11 col-sm-11">

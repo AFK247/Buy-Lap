@@ -12,8 +12,8 @@ const Blog = () => {
                 <div className="card text-bg-dark bg-white border-0">
                     <img src={pic2} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
-                        <h5 className=" text-warning card-title">Difference between SQL and NoSQL</h5>
-                        <p className="card-text">SQL databases support Structured Query Languages but NonSQL does not have any declarative query language.SQL supports table based data type but NoSQL supports document oriented, graph databases, key value pair-based.</p>
+                        <h5 className=" text-warning card-title">What are the different ways to manage a state in a React application?</h5>
+                        <p className="card-text">In React apps, there are at least seven ways to handle the state.It is recommended to avoid storing such information in the app’s state to avoid the URL in our app getting out of sync.The second option is to store the state in the browser via web storage.</p>
 
                     </div>
                 </div>
@@ -21,24 +21,24 @@ const Blog = () => {
                 <div className="card text-bg-dark bg-white border-0">
                     <img src={pic2} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
-                        <h5 className=" text-warning card-title">What is JWT, and how does it work?</h5>
-                        <p className="card-text">JWTs or JSON Web Tokens are most commonly used to identify an authenticated user. They are issued by an authentication server and are consumed by the client-server . They work for only generating tokens and verifying them for authorization</p>
+                        <h5 className=" text-warning card-title"> How does prototypical inheritance work?</h5>
+                        <p className="card-text">The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object. getPrototypeOf and Object.</p>
 
                     </div>
                 </div>
                 <div className="card text-bg-dark bg-white border-0">
                     <img src={pic3} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
-                        <h5 className=" text-warning card-title">What is the difference between javascript and NodeJS?</h5>
-                        <p className="card-text">Javascript is a programming language but NodeJS is a Javascript runtime environment .Javascript is used on  client-side but node is  used on the server-side.Javascript can run in any browser engine but V8 is the Javascript engine inside of node js that parses</p>
+                        <h5 className=" text-warning card-title"> What is a unit test? Why should we write unit tests?</h5>
+                        <p className="card-text">Unit testing is a software development process in which the smallest testable parts of an application, called units, are individually and independently scrutinized for proper operation. This testing methodology is done during the development process by the software developers. The main objective of unit testing is to isolate written code to test and determine if it works as intended.</p>
 
                     </div>
                 </div>
                 <div className="card text-bg-dark bg-white border-0">
                     <img src={pic3} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
-                        <h5 className=" text-warning card-title">How does NodeJS handle multiple requests at the same time?</h5>
-                        <p className="card-text">NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.</p>
+                        <h5 className=" text-warning card-title">React vs. Angular vs. Vue?</h5>
+                        <p className="card-text">React is a UI library, Angular is a fully-fledged front-end framework, while Vue.js is a progressive framework.React can be used as a UI library to render elements, without enforcing a specific project structure, and that’s why it’s not strictly a framework.The Vue.js core library focuses on the View layer only.</p>
 
                     </div>
                 </div>

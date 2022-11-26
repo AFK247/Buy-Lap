@@ -3,7 +3,11 @@ import React from 'react';
 const Loading = () => {
     return (
         <div>
-            <h1 className='text-center'>Loaaaaoaading.....</h1>
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading</span>
+                </div>
+            </div>
         </div>
     );
 };

@@ -40,7 +40,7 @@ const Allbuyers = () => {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th >Name</th>
+                            <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
                             <th>Delete</th>
