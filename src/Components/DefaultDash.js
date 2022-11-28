@@ -6,7 +6,7 @@ const DefaultDash = () => {
         <div className='text-center'>
             <h3> Click Above</h3>
             <h1 >Welcome to dashboard</h1>
-            <img src={dashpic} alt="sdad" />
+            <img className='img-fluid' src={dashpic} alt="sdad" />
         </div>
     );
 };

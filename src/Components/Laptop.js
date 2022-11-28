@@ -51,7 +51,7 @@ const Laptop = ({ laptop }) => {
     return (
         <div className="col">
             <div className="card">
-                <img src={pic} className="card-img-top img-fluid" alt="..."></img>
+                <img style={{height:"40vh"}} src={pic} className="card-img-top img-fluid" alt="..."></img>
                 <div className="card-body">
                     <h4 className="mb-2">{product_name}</h4>
                     <p className="mb-2"><span className='fs-5 fst-italic'>Original Price: </span>${or_price}</p>

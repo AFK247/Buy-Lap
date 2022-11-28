@@ -7,7 +7,7 @@ const AdvertiseCard = ({advert}) => {
         <div>
             <div className="col">
                 <div className="card">
-                    <img style={{ backgroundColor: "rgb(220, 168, 105)" }} src={pic} className="card-img-top img-fluid" alt="..."></img>
+                    <img style={{height:"40vh",backgroundColor: "rgb(220, 168, 105)" }}  src={pic} className="card-img-top img-fluid" alt="..."></img>
                     <div className="card-body">
                         <h4 className="card-title">{product_name}</h4>
                             <h6>Price: {re_price}</h6>
