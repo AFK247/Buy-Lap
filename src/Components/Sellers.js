@@ -9,7 +9,7 @@ const Sellers = () => {
     const { data: sellers = [], refetch } = useQuery({
         queryKey: ['sellers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/seller/${user?.email}`);
+            const res = await fetch(`https://buy-lap-server.vercel.app/seller/${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -17,7 +17,7 @@ const Sellers = () => {
 
     function advertiseHandeler(item) {
         console.log(item);
-        fetch(`http://localhost:5000/advertise`, {
+        fetch(`https://buy-lap-server.vercel.app/advertise`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +34,7 @@ const Sellers = () => {
 
     const handleDelete = itemName => {
         console.log("inside handle Delete",itemName);
-        fetch(`http://localhost:5000/myProductDelete/${itemName}`, {
+        fetch(`https://buy-lap-server.vercel.app/myProductDelete/${itemName}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

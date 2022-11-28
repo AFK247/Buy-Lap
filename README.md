@@ -4,7 +4,7 @@ The Github Repository Link for Client:  https://github.com/programming-hero-web-
 
 The Github Repository Link for Server: https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-AFK247
 
-Live Website Link: https://photography-2351.web.app
+Live Website Link: https://buy-lap.web.app/
 
 Project Work: 
 
@@ -36,3 +36,9 @@ Framework/Libraries Used:
 * Bootstrap
 
 * React Query
+
+Credentials for Admin:
+
+adminEmail: asif@gmail.com
+
+adminPassword: asifasif

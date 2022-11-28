@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/advertise`)
+        loader: () => fetch(`https://buy-lap-server.vercel.app/advertise`)
       },
       {
         path: '/login',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <PrivateRoute><IndividualCat></IndividualCat></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+        loader: ({ params }) => fetch(`https://buy-lap-server.vercel.app/category/${params.id}`)
       },
       {
         path: '/blog',
