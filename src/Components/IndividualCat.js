@@ -26,15 +26,15 @@ const IndividualCat = () => {
 
     return (
         <div>
-            <div className='container'>
-                {lapCode === "gl" && <h2 className='text-center'>Gaming Laptop</h2>}
-                {lapCode === "bl" && <h2 className='text-center'>Business Laptop</h2>}
-                {lapCode === "ol" && <h2 className='text-center'>Office Laptop</h2>}
-                <div className='col-12 col-sm-8 col-md-9 col-lg-9 mx-auto mb-5'>
-                    <div className='row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 g-4 container m-auto'>
+            <div className='container '>
+                {lapCode === "gl" && <h2 className='text-center my-4'>Gaming Laptop</h2>}
+                {lapCode === "bl" && <h2 className='text-center my-4'>Business Laptop</h2>}
+                {lapCode === "ol" && <h2 className='text-center my-4'>Office Laptop</h2>}
+                
+                <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-3 g-3">
                         {laptops.map((laptop, i) => <Laptop key={i} laptop={laptop}></Laptop>)}
                     </div>
-                </div>
+
             </div>
 
         </div>

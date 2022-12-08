@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../hooks/useTitle';
 import { AuthContext } from './AuthProvider';
+import gpic from './pic/google.png'
 
 
 
@@ -104,12 +105,14 @@ const Login = () => {
                                         <div className="form-outline form-white mb-4">
                                             <input required placeholder='Password' type="password" name="password" className="form-control form-control-lg" />
                                         </div>
-                                        <button className="btn btn-outline-warning mb-4 px-4" type="submit">Login</button>
+                                        <button className="btn btn-outline-warning mb-2 px-4" type="submit">Login</button>
                                         <p className='text-danger text-center'>{error}</p> 
-                                        <h4 className="fw-bold my-2 text-uppercase">OR</h4>
-                                        <p className="text-white-50 my-4">Log In with Google</p>
+                                        <h4 className="fw-bold text-uppercase">OR</h4>
+                                        <p className="text-white-50">Log In with Google</p>
                                         <div className='d-flex justify-content-center mb-4'>
-                                            <Link onClick={handleGoogle} className="btn btn-outline-info me-4 px-4" to="">Google</Link>
+                                            <Link onClick={handleGoogle} >
+                                            <img className='img-fluid col-2' src={gpic} alt="google_pic" />
+                                            </Link>
                                         </div>
                                         <p className="small pb-lg-2">Didn't Registered? Go to <Link className="text-white-50" to="/register">Register Page</Link></p>
 

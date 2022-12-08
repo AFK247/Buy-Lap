@@ -7,7 +7,7 @@ const Allcat = ({ catagory }) => {
     return (
         <div>
             <div className="col">
-                <div className="card">
+                <div className="card shadow-lg">
                     <img style={{ backgroundColor: "rgb(220, 168, 105)" }} src={pic} className="card-img-top img-fluid" alt="..."></img>
                     <div className="card-body">
                         <h4 className="card-title">{cat_name}</h4>

@@ -7,7 +7,7 @@ import { AuthContext } from './AuthProvider';
 
 const Laptop = ({ laptop }) => {
     const { user } = useContext(AuthContext);
-    const { product_name, seller_name, pic, years, or_price, re_price, location, code,details } = laptop;
+    const { product_name, condition, seller_name, pic, years, or_price, re_price, location, code, details } = laptop;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,25 +46,38 @@ const Laptop = ({ laptop }) => {
             .catch(er => console.error(er));
 
     }
+    const offer = () => {
+        toast.success("50% discount. Grab your Laptop NOW!!");
+    }
 
 
     return (
         <div className="col">
-            <div className="card">
-                <img style={{height:"40vh"}} src={pic} className="card-img-top img-fluid" alt="..."></img>
-                <div className="card-body">
-                    <h4 className="mb-2">{product_name}</h4>
-                    <p className="mb-2"><span className='fs-5 fst-italic'>Original Price: </span>${or_price}</p>
-                    <p className="mb-2"><span className='fs-5 fst-italic'>Re-Sell Price: </span>${re_price}</p>
-                    <Toaster position="top-center" reverseOrder={false} />
-                    <div>
-                        <span className="card-title mb-2 "><span className='fs-5 fst-italic'>Seller Name: </span>{seller_name}</span>
-                        <i className="fa-solid fa-check ms-1 bg-primary rounded-5"></i>
-                        <span data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-warning ms-3">Book Now</span>
+            <div class="card h-100 shadow-lg">
+                <img src={pic} class="card-img-top" alt="laptop_image"></img>
+                <div class="card-body">
+                    <div class="clearfix mb-3">
+                        <span class="float-start badge rounded-pill bg-primary fs-6">{product_name}</span>
+                        <span class="float-end price-hp p-1 border rounded border-2">{re_price}$</span>
+                        <span class="float-end price-hp p-1 text-danger text-decoration-line-through">{re_price * 2}$</span>
+
                     </div>
-                    <p><span className='fs-5 fst-italic'>Purchase Year: </span>{years}</p>
-                    <p><span className='fs-5 fst-italic'>Location: </span>{location}</p>
-                    <p><span className='fs-5 fst-italic'>Details: </span>{details}</p>
+                    <p class="card-title mb-3">{details}</p>
+                    <h6><span class="fw-normal fst-italic">Condition:</span> {condition}</h6>
+                    <h6><span class="fw-normal fst-italic">Location:</span> {location}</h6>
+                    <h6><span class="fw-normal fst-italic">Years Used:</span> {years} yrs</h6>
+                    <h6><span class="fw-normal fst-italic">Seller:</span> {seller_name}</h6>
+                    <ul class="list-inline small">
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+                    </ul>
+                    <div class="my-4">
+                        <button onClick={offer} class="btn btn-outline-primary fw-bold">Check offer</button>
+                        <span data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-outline-primary fw-bold ms-3">Book Now</span>
+                    </div>
                 </div>
             </div>
 
