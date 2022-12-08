@@ -14,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 import Register from "./Register";
 import Reported from "./Reported";
 import Sellers from "./Sellers";
+import UpdateLaptop from "./UpdateLaptop";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
 
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch(`https://buy-lap-server.vercel.app/advertise`)
+        loader: () => fetch(`http://localhost:5000/advertise`)
       },
       {
         path: '/login',
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <PrivateRoute><IndividualCat></IndividualCat></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://buy-lap-server.vercel.app/category/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
       },
       {
         path: '/blog',
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myProduct',
         element: <Sellers></Sellers>
+      },
+      {
+        path: '/dashboard/updateLaptop/:id',
+        element: <UpdateLaptop></UpdateLaptop>,
+        loader: ({ params }) => fetch(`http://localhost:5000/dashboard/updateLaptop/${params.id}`)
       },
       {
         path: '/dashboard/addProduct',

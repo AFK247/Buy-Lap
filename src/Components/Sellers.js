@@ -5,11 +5,10 @@ import { AuthContext } from './AuthProvider';
 
 const Sellers = () => {
     const { user } = useContext(AuthContext);
-    console.log(user.email);
     const { data: sellers = [], refetch } = useQuery({
         queryKey: ['sellers'],
         queryFn: async () => {
-            const res = await fetch(`https://buy-lap-server.vercel.app/seller/${user?.email}`);
+            const res = await fetch(`http://localhost:5000/seller/${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -17,7 +16,7 @@ const Sellers = () => {
 
     function advertiseHandeler(item) {
         console.log(item);
-        fetch(`https://buy-lap-server.vercel.app/advertise`, {
+        fetch(`http://localhost:5000/advertise`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +33,7 @@ const Sellers = () => {
 
     const handleDelete = itemName => {
         console.log("inside handle Delete",itemName);
-        fetch(`https://buy-lap-server.vercel.app/myProductDelete/${itemName}`, {
+        fetch(`http://localhost:5000/myProductDelete/${itemName}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -60,6 +59,7 @@ const Sellers = () => {
                             <th>Status</th>
                             <th>Delete</th>
                             <th>Advertise</th>
+                            <th>Update</th>
 
                         </tr>
                     </thead>
@@ -74,7 +74,8 @@ const Sellers = () => {
                                 <td>${item.re_price}</td>
                                 <td>{item.status}</td>
                                 <td><button onClick={() => handleDelete(item.product_name)} className='btn btn-danger'>Delete</button></td>
-                                <td><button onClick={() => advertiseHandeler(item)} className='btn btn-danger'>Advertise</button></td>
+                                <td><button onClick={() => advertiseHandeler(item)} className='btn btn-info'>Advertise</button></td>
+                                <td><Link to={`/dashboard/updateLaptop/${item._id}`} className='btn btn-warning'>Update</Link></td>
                             </tr>)
                         }
 

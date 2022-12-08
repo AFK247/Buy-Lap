@@ -13,7 +13,7 @@ const IndividualCat = () => {
     const { data: laptops = [], isLoading } = useQuery({
         queryKey: ['laptops'],
         queryFn: async () => {
-            const res = await fetch(`https://buy-lap-server.vercel.app/category/${lapCode}`);
+            const res = await fetch(`http://localhost:5000/category/${lapCode}`);
             const data = await res.json();
             return data;
         }

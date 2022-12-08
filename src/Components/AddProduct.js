@@ -20,7 +20,7 @@ const AddProduct = () => {
         const condition = form.select2.value
         const details = form.details.value
 
-console.log(code);
+        
         const product = {
             product_name,
             seller_name,
@@ -38,7 +38,7 @@ console.log(code);
             status:"available"
         }
         console.log(product);
-        fetch(`https://buy-lap-server.vercel.app/addProduct`, {
+        fetch(`http://localhost:5000/addProduct`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

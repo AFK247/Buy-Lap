@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import logo from "./pic/logo.png"
+import './hover.css'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Header = () => {
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link text-warning active home fs-4 ms-3" to="/">Home</Link>
+                            <Link className="nav-link text-warning active home fs-4 ms-3 hover" to="/">Home</Link>
                         </li>
 
                         <>
@@ -40,7 +41,7 @@ const Header = () => {
                                 </li>
                                 :
                                 <li className="nav-item">
-                                    <Link className="nav-link text-info active home fs-4 ms-3" to="/login">Log In</Link>
+                                    <Link className="nav-link text-info active home fs-4 ms-3 hover" to="/login">Log In</Link>
                                 </li>}
                         </>
                         {user?.photoURL &&

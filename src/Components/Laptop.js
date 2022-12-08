@@ -31,7 +31,7 @@ const Laptop = ({ laptop }) => {
             status: "sold"
         }
         console.log(info);
-        fetch(`https://buy-lap-server.vercel.app/bookings`, {
+        fetch(`http://localhost:5000/bookings`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -53,7 +53,7 @@ const Laptop = ({ laptop }) => {
     return (
         <div className="col">
             <div class="card h-100 shadow-lg">
-                <img src={pic} class="card-img-top" alt="laptop_image"></img>
+                <img style={{height:"40%"}} src={pic} class="card-img-top" alt="laptop_image"></img>
                 <div class="card-body">
                     <div class="clearfix mb-3">
                         <span class="float-start badge rounded-pill bg-primary fs-6">{product_name}</span>
@@ -74,7 +74,7 @@ const Laptop = ({ laptop }) => {
                         <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
                     </ul>
                     <div class="my-4">
-                        <button onClick={offer} class="btn btn-outline-primary fw-bold">Check offer</button>
+                        <button onClick={offer} class="btn btn-outline-primary fw-bold">Offer</button>
                         <span data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-outline-primary fw-bold ms-3">Book Now</span>
                     </div>
                 </div>

@@ -4,9 +4,8 @@ import dashpic from "./pic/default.jpg"
 const DefaultDash = () => {
     return (
         <div className='text-center'>
-            <h3> Click Above</h3>
-            <h1 >Welcome to dashboard</h1>
-            <img className='img-fluid' src={dashpic} alt="sdad" />
+            <h1 style={{fontFamily:"cursive",fontStyle:"oblique"}}>Welcome to dashboard</h1>
+            <img className='img-fluid col-8' src={dashpic} alt="dashboard" />
         </div>
     );
 };

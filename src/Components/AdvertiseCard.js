@@ -10,7 +10,7 @@ const AdvertiseCard = ({ advert }) => {
     return (
         <div class="col">
             <div class="card h-100 shadow-lg">
-                <img src={pic} class="card-img-top" alt="laptop_image"></img>
+                <img style={{height:"46%"}} src={pic} class="card-img-top" alt="laptop_image"></img>
                 <div class="card-body">
                     <div class="clearfix mb-3">
                         <span class="float-start badge rounded-pill bg-primary fs-6">{product_name}</span>
@@ -28,7 +28,7 @@ const AdvertiseCard = ({ advert }) => {
                         <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                         <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
                     </ul>
-                    <div class="my-4"> <button onClick={offer} class="btn btn-outline-primary fw-bold">Check offer</button> </div>
+                    <div> <button onClick={offer} class="btn btn-outline-primary fw-bold">Check offer</button> </div>
                 </div>
             </div>
             

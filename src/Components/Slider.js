@@ -5,7 +5,7 @@ import pic3 from "./pic/pic3.png"
 
 const Slider = () => {
     return (
-        <div>
+        <div >
             <section className='mt-5'>
                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner d-flex ">

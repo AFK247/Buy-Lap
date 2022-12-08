@@ -24,15 +24,15 @@ const Footer = () => {
                     <div className="col">
                         <h3 className="mb-4 fw-bolder">CONTACT</h3>
 
-                        <p><i className="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i className="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                        <p><i className="fas fa-home mr-3"></i> Rajshahi, Bangladesh</p>
+                        <p><i className="fas fa-envelope mr-3"></i> asifferdous23@gmail.com</p>
                         <p><i className="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i className="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <p><i className="fas fa-print mr-3"></i> + 01 234 318 23</p>
                     </div>
                     <div className="col d-flex flex-column">
                         <h2 className="fw-bolder">Follow US</h2>
 
-                        <p><Link href="#" className="text-decoration-none fab fa-facebook fs-3"></Link></p>
+                        <p><Link href="#" className="text-primary text-decoration-none fab fa-facebook fs-3"></Link></p>
                         <p><Link href="#" className="text-danger text-decoration-none  fab fa-twitter fs-3"></Link></p>
                         <p><Link href="#" className="text-warning text-decoration-none  fab fa-linkedin fs-3"></Link></p>
                         <p><Link href="#" className="text-info text-decoration-none  fab fa-pinterest fs-3"></Link></p>

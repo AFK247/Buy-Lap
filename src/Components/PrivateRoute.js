@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import Loading from './Loading';
 
 //Private Route
 const PrivateRoute = ({ children }) => {
@@ -9,12 +10,7 @@ const PrivateRoute = ({ children }) => {
 
     //loading spinner
     if (loading) {
-        console.log("loading er vitor");
-        return <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading</span>
-            </div>
-        </div>
+        return <Loading></Loading>
 
     }
 

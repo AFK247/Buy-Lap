@@ -15,40 +15,39 @@ const Dashboard = () => {
     return (
         <div>
             <Header></Header>
-            <div>
-                <div>
-                    <ul className="d-flex gap-5 p-4  justify-content-center">
-                        {/* <li><Link className='btn btn-info' to="/dashboard">Dashbooard</Link></li> */}
+            <div className='row container p-5 m-auto'>
+                <div className='col-4 '>
                         {
                             isAdmin &&
-                            <div>
+                            <div className=' text-center '>
                                 <h2 className='text-center my-3'>Admin Panel</h2>
-                                <Link className='btn btn-info ' to="/dashboard/allbuyers">All Buyers</Link>
-                                <Link className='btn btn-info ms-4' to="/dashboard/allsellers">All Sellers</Link>
-                                <Link className='btn btn-info ms-4' to="/dashboard/reported">Reported Items</Link>
+                                <li className='list-unstyled mt-4'><Link className='btn btn-info' to="/dashboard/allbuyers">All Buyers</Link></li>
+                                <li className='list-unstyled mt-4'><Link className='btn btn-info' to="/dashboard/allsellers">All Sellers</Link></li>
+                                <li className='list-unstyled mt-4'><Link className='btn btn-info' to="/dashboard/reported">Reported Items</Link></li>
                             </div>
                         }
                         {
                             isBuyer &&
-                            <div>
+                            <div className=' text-center '>
                                 <h2 className='text-center my-3'>Buyer Panel</h2>
-                                <Link className='btn btn-info' to="/dashboard/buyers">Buyers</Link>
+                                <li className='list-unstyled mt-4'><Link className='btn btn-info' to="/dashboard/buyers">Buyers</Link></li>
+                                
                             </div>
                         }
                         {
                             isSeller &&
-                            <div>
+                            <div className=' text-center '>
                                 <h2 className='text-center my-3'>Seller Panel</h2>
-                                <Link className='btn btn-info' to="/dashboard/myproduct">My Product</Link>
-                                <Link className='btn btn-info ms-4' to="/dashboard/addProduct">Add Product</Link>
+                                <li className='list-unstyled mt-4'><Link className='btn btn-info' to="/dashboard/myproduct">My Product</Link></li>
+                                <li className='list-unstyled mt-4'><Link className='btn btn-info' to="/dashboard/addProduct">Add Product</Link></li>
+                                
                             </div>
 
                         }
 
-                    </ul>
                 </div>
 
-                <div>
+                <div className='col-8'>
                     <Outlet></Outlet>
                 </div>
             </div>

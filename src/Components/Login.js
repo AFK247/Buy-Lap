@@ -1,10 +1,10 @@
-
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../hooks/useTitle';
 import { AuthContext } from './AuthProvider';
 import gpic from './pic/google.png'
+import './hover.css'
 
 
 
@@ -30,6 +30,7 @@ const Login = () => {
 
         googleLogin(google)
             .then(result => {
+                navigate(from, {replace: true});
                 const user = result.user;
                 console.log(user);
                 const googleUser = {
@@ -39,7 +40,7 @@ const Login = () => {
                     role:"seller"  
                 }
                 console.log(user);
-                fetch(`https://buy-lap-server.vercel.app/user`, {
+                fetch(`http://localhost:5000/user`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -49,7 +50,8 @@ const Login = () => {
                     .then(res => res.json())
                     .then(newData => {
                         if (newData.acknowledged)
-                            alert("Google Login Succesful")
+                            alert("Google Login Succesful");
+                            
                     })
                     .catch(er => console.error(er));
                
@@ -111,7 +113,7 @@ const Login = () => {
                                         <p className="text-white-50">Log In with Google</p>
                                         <div className='d-flex justify-content-center mb-4'>
                                             <Link onClick={handleGoogle} >
-                                            <img className='img-fluid col-2' src={gpic} alt="google_pic" />
+                                            <img  className='img-fluid col-2 hover' src={gpic} alt="google_pic" />
                                             </Link>
                                         </div>
                                         <p className="small pb-lg-2">Didn't Registered? Go to <Link className="text-white-50" to="/register">Register Page</Link></p>
