@@ -50,7 +50,6 @@ const Laptop = ({ laptop }) => {
         toast.success("50% discount. Grab your Laptop NOW!!");
     }
 
-
     return (
         <div className="col">
             <div class="card h-100 shadow-lg">
