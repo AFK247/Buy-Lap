@@ -8,7 +8,7 @@ const About = () => {
             <section className="col-10 m-auto my-5 ">
                 <div className="row d-flex mx-4 flex-lg-row  flex-md-column-reverse flex-sm-column-reverse flex-column-reverse">
 
-                    <div className="col-lg-6 col-md-11 col-sm-11 mt-4">
+                    <div data-aos="fade-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="col-lg-6 col-md-11 col-sm-11 mt-4">
                         <h6 className="text-danger">Welcome To Buy Lap</h6>
                         <h2>We are always Faster & Reliable</h2>
                         <hr style={{ border: "2px solid red", backgroundColor: "red" }} className="col-4  " />
@@ -16,7 +16,7 @@ const About = () => {
                         <Link className="btn btn-danger rounded-pill mb-5" to="/">Browse Laptop</Link>
                     </div>
 
-                    <div className="col-lg-6 col-md-11 col-sm-11">
+                    <div data-aos="fade-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="col-lg-6 col-md-11 col-sm-11">
                         <img className="img-fluid " src={pic} alt=""></img>
                     </div>
 

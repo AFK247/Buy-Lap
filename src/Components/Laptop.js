@@ -52,8 +52,8 @@ const Laptop = ({ laptop }) => {
 
     return (
         <div className="col">
-            <div class="card h-100 shadow-lg">
-                <img style={{height:"40%"}} src={pic} class="card-img-top" alt="laptop_image"></img>
+            <div class="card shadow-lg">
+                <img style={{height:"30vh"}} src={pic} class="card-img-top" alt="laptop_image"></img>
                 <div class="card-body">
                     <div class="clearfix mb-3">
                         <span class="float-start badge rounded-pill bg-primary fs-6">{product_name}</span>

@@ -16,7 +16,7 @@ const Dashboard = () => {
         <div>
             <Header></Header>
             <div className='row container p-5 m-auto'>
-                <div className='col-4 '>
+                <div data-aos="zoom-in-right" data-aos-duration="2000" className='col-4 '>
                         {
                             isAdmin &&
                             <div className=' text-center '>
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
                 </div>
 
-                <div className='col-8'>
+                <div data-aos="zoom-in-left" data-aos-duration="2000" className='col-8'>
                     <Outlet></Outlet>
                 </div>
             </div>

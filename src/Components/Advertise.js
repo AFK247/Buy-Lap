@@ -7,7 +7,7 @@ const Advertise = ({ advertise }) => {
         <div className='p-5'>
             <h1 className='text-info text-center  my-5'>Advertised Items</h1>
             
-            <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-3 g-5">
+            <div data-aos="zoom-in-up" data-aos-duration="2000" class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-3 g-5 mt-5">
 
                     {
                         advertise.map(advert => <AdvertiseCard key={advert._id} advert={advert} />)

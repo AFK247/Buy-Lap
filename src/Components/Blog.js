@@ -9,7 +9,8 @@ const Blog = () => {
         <div className='container text-center'>
             <h2 className='text-danger my-4'>BLOG</h2>
             <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 p-1 g-5 d-flex justify-content-center">
-                <div className="card text-bg-dark bg-white border-0">
+                
+                <div data-aos="fade-right" data-aos-duration="2000" className="card text-bg-dark bg-white border-0">
                     <img src={pic2} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
                         <h5 className=" text-warning card-title">What are the different ways to manage a state in a React application?</h5>
@@ -18,7 +19,7 @@ const Blog = () => {
                     </div>
                 </div>
 
-                <div className="card text-bg-dark bg-white border-0">
+                <div data-aos="fade-left" data-aos-duration="2000" className="card text-bg-dark bg-white border-0">
                     <img src={pic2} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
                         <h5 className=" text-warning card-title"> How does prototypical inheritance work?</h5>
@@ -26,7 +27,8 @@ const Blog = () => {
 
                     </div>
                 </div>
-                <div className="card text-bg-dark bg-white border-0">
+
+                <div data-aos="fade-right" data-aos-duration="2000" className="card text-bg-dark bg-white border-0">
                     <img src={pic3} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
                         <h5 className=" text-warning card-title"> What is a unit test? Why should we write unit tests?</h5>
@@ -34,7 +36,8 @@ const Blog = () => {
 
                     </div>
                 </div>
-                <div className="card text-bg-dark bg-white border-0">
+
+                <div data-aos="fade-left" data-aos-duration="2000" className="card text-bg-dark bg-white border-0">
                     <img src={pic3} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
                         <h5 className=" text-warning card-title">React vs. Angular vs. Vue?</h5>

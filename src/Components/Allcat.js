@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./hover.css"
 
 const Allcat = ({ catagory }) => {
     const { code, cat_name, pic, details } = catagory;
     const id = code;
     return (
         <div>
-            <div className="col">
+            <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="col ">
                 <div className="card shadow-lg">
                     <img style={{ backgroundColor: "rgb(220, 168, 105)" }} src={pic} className="card-img-top img-fluid" alt="..."></img>
                     <div className="card-body">
