@@ -26,7 +26,7 @@ const Register = () => {
             role  
         }
         console.log(user);
-        fetch(`http://localhost:5000/user`, {
+        fetch(`https://buy-lap-server.vercel.app/user`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

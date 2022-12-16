@@ -40,7 +40,7 @@ const UpdateLaptop = () => {
             phone,
             details
         }
-        fetch(`http://localhost:5000/dashboard/updateLaptop/${_id}`, {
+        fetch(`https://buy-lap-server.vercel.app/dashboard/updateLaptop/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

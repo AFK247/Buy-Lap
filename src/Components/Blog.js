@@ -18,7 +18,7 @@ const Blog = () => {
 
                     </div>
                 </div>
-
+                
                 <div data-aos="fade-left" data-aos-duration="2000" className="card text-bg-dark bg-white border-0">
                     <img src={pic2} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
@@ -27,7 +27,7 @@ const Blog = () => {
 
                     </div>
                 </div>
-
+                
                 <div data-aos="fade-right" data-aos-duration="2000" className="card text-bg-dark bg-white border-0">
                     <img src={pic3} className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column justify-content-center m-4">
