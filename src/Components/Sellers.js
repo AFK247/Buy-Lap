@@ -4,19 +4,27 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 
 const Sellers = () => {
-    const { user } = useContext(AuthContext);
-    const { data: sellers = [], refetch } = useQuery({
-        queryKey: ['sellers'],
+    const { user,logOut} = useContext(AuthContext);
+    const { data: sellers = []} = useQuery({
+        queryKey: ['sellers',user?.email],
         queryFn: async () => {
-            const res = await fetch(`https://buy-lap-server.vercel.app/seller/${user?.email}`);
+            const res = await fetch(`http://localhost:5000/seller?email=${user?.email}`, {
+                headers: {
+                   authorization: `bearer ${localStorage.getItem('accessToken')}` 
+                }
+            });
+            if(res.status===401 || res.status===403){
+                logOut();
+            }
             const data = await res.json();
             return data;
+
         }
     });
 
     function advertiseHandeler(item) {
         console.log(item);
-        fetch(`https://buy-lap-server.vercel.app/advertise`, {
+        fetch(`http://localhost:5000/advertise`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,14 +34,14 @@ const Sellers = () => {
             .then(res => res.json())
             .then(newData => {
                 if (newData.acknowledged)
-                    alert("Successfully Advertied in Homepage")
+                    alert("Successfully Advertised in Homepage")
             })
             .catch(er => console.error(er));
     }
 
     const handleDelete = itemName => {
         console.log("inside handle Delete",itemName);
-        fetch(`https://buy-lap-server.vercel.app/myProductDelete/${itemName}`, {
+        fetch(`http://localhost:5000/myProductDelete/${itemName}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -47,8 +55,11 @@ const Sellers = () => {
 
     return (
         <div>
-            <div className='d-flex justify-content-center'>
+            <div className='d-flex justify-content-center align-items-center'>
 
+                {sellers?.length===0?
+                <h1 style={{height:"33vh"}}>No Product Found</h1>
+                :
                 <table className="table w-auto">
                     <thead>
                         <tr>
@@ -82,6 +93,7 @@ const Sellers = () => {
 
                     </tbody>
                 </table>
+                }
             </div>
         </div>
     );

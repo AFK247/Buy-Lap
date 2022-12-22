@@ -6,7 +6,7 @@ const Allbuyers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('https://buy-lap-server.vercel.app/user');
+            const res = await fetch('http://localhost:5000/user');
             const data = await res.json();
             return data;
         }
@@ -17,7 +17,7 @@ const Allbuyers = () => {
 
     const handleDelete = (emailAdd) => {
         console.log("inside handle Allbuyer Delete email ",emailAdd);
-        fetch(`https://buy-lap-server.vercel.app/deleteBuyer/${emailAdd}`, {
+        fetch(`http://localhost:5000/deleteBuyer/${emailAdd}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

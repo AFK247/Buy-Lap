@@ -30,9 +30,11 @@ const Login = () => {
 
         googleLogin(google)
             .then(result => {
-                navigate(from, {replace: true});
                 const user = result.user;
                 console.log(user);
+                getUserToken(user.email);
+                navigate(from, {replace: true});
+                
                 const googleUser = {
                     email:user.email,
                     name:user.displayName,
@@ -40,7 +42,7 @@ const Login = () => {
                     role:"seller"  
                 }
                 console.log(user);
-                fetch(`https://buy-lap-server.vercel.app/user`, {
+                fetch(`http://localhost:5000/user`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -71,6 +73,7 @@ const Login = () => {
         .then(temp => {
                 const user = temp.user;
                 console.log(user);
+                getUserToken(email);
                 navigate(from, {replace: true});
                 form.reset();
                 setError('');
@@ -85,6 +88,15 @@ const Login = () => {
             })
             
     }
+    const getUserToken=(email)=>{
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.accessToken) {
+                localStorage.setItem('accessToken', data.accessToken);
+            }
+        });
+      }
 
     return (
         <div>

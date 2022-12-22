@@ -3,12 +3,19 @@ import React, { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 
 const Buyers = () => {
-    const { user } = useContext(AuthContext);
+    const { user,logOut } = useContext(AuthContext);
     console.log(user.email);
-    const { data: buyers = [], refetch } = useQuery({
+    const { data: buyers = [] } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const res = await fetch(`https://buy-lap-server.vercel.app/buyer/${user?.email}`);
+            const res = await fetch(`http://localhost:5000/buyer/${user?.email}`, {
+                headers: {
+                   authorization: `bearer ${localStorage.getItem('accessToken')}` 
+                }
+            });
+            if(res.status===401 || res.status===403){
+                logOut();
+            }
             const data = await res.json();
             return data;
         }

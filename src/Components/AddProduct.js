@@ -38,7 +38,7 @@ const AddProduct = () => {
             status:"available"
         }
         console.log(product);
-        fetch(`https://buy-lap-server.vercel.app/addProduct`, {
+        fetch(`http://localhost:5000/addProduct`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
