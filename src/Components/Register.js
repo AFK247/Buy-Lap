@@ -34,7 +34,7 @@ const Register = () => {
         handleUserProfile(name, photoURL);
         form.reset();
 
-        fetch(`http://localhost:5000/user`, {
+        fetch(`https://buy-lap-server-afk247.vercel.app/user`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -59,7 +59,7 @@ const Register = () => {
       });
   };
   const getUserToken=(email)=>{
-    fetch(`http://localhost:5000/jwt?email=${email}`)
+    fetch(`https://buy-lap-server-afk247.vercel.app/jwt?email=${email}`)
     .then(res => res.json())
     .then(data => {
         if (data.accessToken) {
@@ -105,10 +105,10 @@ const Register = () => {
                         class="form-select"
                         aria-label="Default select example"
                       >
-                        <option selected value="buyer">
+                        <option value="buyer">
                           Buyer
                         </option>
-                        <option value="seller">Seller</option>
+                        <option selected value="seller">Seller</option>
                       </select>
                     </div>
 

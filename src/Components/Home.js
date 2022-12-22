@@ -17,7 +17,7 @@ const Home = () => {
     console.log(len);
     return (
         <>
-            <h1 className='text-center text-danger my-5'>WELCOME TO BUY LAP</h1><br></br>
+            <h1 className='text-center text-danger mt-3'>WELCOME TO BUY LAP</h1><br></br>
             <Slider></Slider>
             {len && <Advertise advertise={advertise}></Advertise>}
             <Catagory></Catagory>

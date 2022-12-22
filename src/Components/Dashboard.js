@@ -15,8 +15,9 @@ const Dashboard = () => {
     return (
         <div>
             <Header></Header>
-            <div className='row container p-5 m-auto'>
-                <div data-aos="zoom-in-right" data-aos-duration="2000" className='col-4 '>
+            <div className='row container p-3 m-auto flex-column d-flex flex-md-row flex-lg-row'>
+
+                <div data-aos="zoom-in-right" data-aos-duration="2000" className='col-lg-4'>
                         {
                             isAdmin &&
                             <div className=' text-center '>
@@ -47,7 +48,7 @@ const Dashboard = () => {
 
                 </div>
 
-                <div data-aos="zoom-in-left" data-aos-duration="2000" className='col-8'>
+                <div data-aos="zoom-in-left" data-aos-duration="2000" className='col-lg-8'>
                     <Outlet></Outlet>
                 </div>
             </div>

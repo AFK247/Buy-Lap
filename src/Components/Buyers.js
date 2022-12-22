@@ -8,7 +8,7 @@ const Buyers = () => {
     const { data: buyers = [] } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/buyer/${user?.email}`, {
+            const res = await fetch(`https://buy-lap-server-afk247.vercel.app/buyer/${user?.email}`, {
                 headers: {
                    authorization: `bearer ${localStorage.getItem('accessToken')}` 
                 }
@@ -24,8 +24,10 @@ const Buyers = () => {
         <div>
         <h2 className='text-center'>Buyers</h2>
         <div className='d-flex justify-content-center'>
-        
-        <table className="table w-auto">
+        {buyers?.length===0?
+                <h1 style={{height:"33vh"}}>No Product Found</h1>
+                :
+        <table style={{height:"33vh"}} className="table w-auto">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -50,7 +52,7 @@ const Buyers = () => {
                 
                
             </tbody>
-        </table>
+        </table>}
     </div>
     </div>
     );

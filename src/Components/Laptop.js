@@ -31,7 +31,7 @@ const Laptop = ({ laptop }) => {
             status: "sold"
         }
         console.log(info);
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://buy-lap-server-afk247.vercel.app/bookings`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

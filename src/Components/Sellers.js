@@ -8,7 +8,7 @@ const Sellers = () => {
     const { data: sellers = []} = useQuery({
         queryKey: ['sellers',user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/seller?email=${user?.email}`, {
+            const res = await fetch(`https://buy-lap-server-afk247.vercel.app/seller?email=${user?.email}`, {
                 headers: {
                    authorization: `bearer ${localStorage.getItem('accessToken')}` 
                 }
@@ -24,7 +24,7 @@ const Sellers = () => {
 
     function advertiseHandeler(item) {
         console.log(item);
-        fetch(`http://localhost:5000/advertise`, {
+        fetch(`https://buy-lap-server-afk247.vercel.app/advertise`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const Sellers = () => {
 
     const handleDelete = itemName => {
         console.log("inside handle Delete",itemName);
-        fetch(`http://localhost:5000/myProductDelete/${itemName}`, {
+        fetch(`https://buy-lap-server-afk247.vercel.app/myProductDelete/${itemName}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -60,7 +60,7 @@ const Sellers = () => {
                 {sellers?.length===0?
                 <h1 style={{height:"33vh"}}>No Product Found</h1>
                 :
-                <table className="table w-auto">
+                <table style={{height:"33vh"}} className="table w-auto">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

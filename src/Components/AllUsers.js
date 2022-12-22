@@ -6,7 +6,7 @@ const AllUsers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/user');
+            const res = await fetch('https://buy-lap-server-afk247.vercel.app/user');
             const data = await res.json();
             return data;
         }
@@ -18,7 +18,7 @@ const AllUsers = () => {
 
     const handleDelete = (name) => {
         console.log("inside handle Delete email ",name);
-        fetch(`http://localhost:5000/deleteUser/${name}`, {
+        fetch(`https://buy-lap-server-afk247.vercel.app/deleteUser/${name}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

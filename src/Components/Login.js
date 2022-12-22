@@ -42,7 +42,7 @@ const Login = () => {
                     role:"seller"  
                 }
                 console.log(user);
-                fetch(`http://localhost:5000/user`, {
+                fetch(`https://buy-lap-server-afk247.vercel.app/user`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -89,7 +89,7 @@ const Login = () => {
             
     }
     const getUserToken=(email)=>{
-        fetch(`http://localhost:5000/jwt?email=${email}`)
+        fetch(`https://buy-lap-server-afk247.vercel.app/jwt?email=${email}`)
         .then(res => res.json())
         .then(data => {
             if (data.accessToken) {
@@ -128,7 +128,7 @@ const Login = () => {
                                             <img  className='img-fluid col-2 hover' src={gpic} alt="google_pic" />
                                             </Link>
                                         </div>
-                                        <p className="small pb-lg-2">Didn't Registered? Go to <Link className="text-white-50" to="/register">Register Page</Link></p>
+                                        <p className="small pb-lg-2">Didn't Registered? Go to <Link className="fs-5" to="/register">Register Page</Link></p>
 
                                     </form>
 
